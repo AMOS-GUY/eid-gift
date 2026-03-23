@@ -1,0 +1,1302 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Eid Mubarak ✦</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Cinzel:wght@400;600&family=DM+Sans:wght@300;400&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      :root {
+        --gold: #c9a96e;
+        --gold-light: #e8d5a3;
+        --gold-pale: #f5ecd4;
+        --deep: #0d0d0f;
+        --deep2: #13121a;
+        --text: #f0ead6;
+        --text-muted: #9e9484;
+        --glass-bg: rgba(255, 255, 255, 0.04);
+        --glass-bg2: rgba(255, 255, 255, 0.06);
+        --glass-border: rgba(201, 169, 110, 0.18);
+        --glass-border2: rgba(201, 169, 110, 0.28);
+      }
+
+      html {
+        scroll-behavior: smooth;
+        scrollbar-width: thin;
+        scrollbar-color: rgba(201, 169, 110, 0.2) transparent;
+      }
+
+      body {
+        background: var(--deep);
+        font-family: "DM Sans", sans-serif;
+        color: var(--text);
+        min-height: 100vh;
+        overflow-x: hidden;
+      }
+
+      body.entered {
+        animation: pageEnter 0.8s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      @keyframes pageEnter {
+        from {
+          opacity: 0;
+          transform: translateY(24px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* ── Background ── */
+      .bg-fixed {
+        position: fixed;
+        inset: 0;
+        z-index: 0;
+        overflow: hidden;
+        pointer-events: none;
+      }
+      .bg-gradient {
+        position: absolute;
+        inset: 0;
+        background:
+          radial-gradient(
+            ellipse 70% 50% at 15% 15%,
+            rgba(201, 169, 110, 0.1) 0%,
+            transparent 55%
+          ),
+          radial-gradient(
+            ellipse 60% 70% at 85% 85%,
+            rgba(100, 60, 180, 0.09) 0%,
+            transparent 55%
+          ),
+          linear-gradient(165deg, #0d0d0f 0%, #13121a 50%, #0a0a12 100%);
+      }
+      .orb {
+        position: absolute;
+        border-radius: 50%;
+        filter: blur(90px);
+        animation: orbFloat 14s ease-in-out infinite;
+      }
+      .orb-1 {
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(
+          circle,
+          rgba(201, 169, 110, 0.18) 0%,
+          transparent 70%
+        );
+        top: -200px;
+        left: -150px;
+        animation-delay: 0s;
+        opacity: 0.5;
+      }
+      .orb-2 {
+        width: 500px;
+        height: 500px;
+        background: radial-gradient(
+          circle,
+          rgba(130, 70, 200, 0.12) 0%,
+          transparent 70%
+        );
+        bottom: -150px;
+        right: -100px;
+        animation-delay: -5s;
+        opacity: 0.4;
+      }
+      .orb-3 {
+        width: 350px;
+        height: 350px;
+        background: radial-gradient(
+          circle,
+          rgba(201, 169, 110, 0.1) 0%,
+          transparent 70%
+        );
+        top: 40%;
+        left: 55%;
+        animation-delay: -9s;
+        opacity: 0.35;
+      }
+      @keyframes orbFloat {
+        0%,
+        100% {
+          transform: translate(0, 0) scale(1);
+        }
+        33% {
+          transform: translate(25px, -35px) scale(1.05);
+        }
+        66% {
+          transform: translate(-20px, 20px) scale(0.96);
+        }
+      }
+
+      .pattern {
+        position: absolute;
+        inset: 0;
+        background-image:
+          repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 50px,
+            rgba(201, 169, 110, 0.02) 50px,
+            rgba(201, 169, 110, 0.02) 51px
+          ),
+          repeating-linear-gradient(
+            -45deg,
+            transparent,
+            transparent 50px,
+            rgba(201, 169, 110, 0.02) 50px,
+            rgba(201, 169, 110, 0.02) 51px
+          );
+      }
+
+      .particles {
+        position: absolute;
+        inset: 0;
+      }
+      .particle {
+        position: absolute;
+        border-radius: 50%;
+        background: var(--gold);
+        animation: particleDrift linear infinite;
+        opacity: 0;
+      }
+      @keyframes particleDrift {
+        0% {
+          transform: translateY(110vh) translateX(0);
+          opacity: 0;
+        }
+        8% {
+          opacity: 0.5;
+        }
+        92% {
+          opacity: 0.2;
+        }
+        100% {
+          transform: translateY(-10vh) translateX(50px);
+          opacity: 0;
+        }
+      }
+
+      /* ── Corner Accents ── */
+      .corner {
+        position: fixed;
+        width: 55px;
+        height: 55px;
+        border-color: rgba(201, 169, 110, 0.16);
+        border-style: solid;
+        z-index: 100;
+      }
+      .corner-tl {
+        top: 1.5rem;
+        left: 1.5rem;
+        border-width: 1px 0 0 1px;
+      }
+      .corner-tr {
+        top: 1.5rem;
+        right: 1.5rem;
+        border-width: 1px 1px 0 0;
+      }
+      .corner-bl {
+        bottom: 1.5rem;
+        left: 1.5rem;
+        border-width: 0 0 1px 1px;
+      }
+      .corner-br {
+        bottom: 1.5rem;
+        right: 1.5rem;
+        border-width: 0 1px 1px 0;
+      }
+
+      /* ── Layout ── */
+      .page {
+        position: relative;
+        z-index: 10;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 2rem 5rem;
+      }
+
+      /* ── Hero Section ── */
+      .hero {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 7rem 1rem 4rem;
+        opacity: 0;
+        animation: fadeSlideDown 1s cubic-bezier(0.22, 1, 0.36, 1) 0.1s forwards;
+      }
+
+      .hero-crescent {
+        font-size: 3rem;
+        color: var(--gold);
+        filter: drop-shadow(0 0 20px rgba(201, 169, 110, 0.55));
+        letter-spacing: 0.5rem;
+        margin-bottom: 2rem;
+        animation: gentlePulse 3s ease-in-out infinite;
+      }
+      @keyframes gentlePulse {
+        0%,
+        100% {
+          filter: drop-shadow(0 0 20px rgba(201, 169, 110, 0.55));
+        }
+        50% {
+          filter: drop-shadow(0 0 35px rgba(201, 169, 110, 0.8));
+        }
+      }
+
+      .arabic {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.1rem, 3vw, 1.5rem);
+        font-weight: 300;
+        font-style: italic;
+        color: var(--gold);
+        letter-spacing: 0.08em;
+        margin-bottom: 1rem;
+        opacity: 0.85;
+      }
+
+      .hero-title {
+        font-family: "Cinzel", serif;
+        font-size: clamp(2.5rem, 8vw, 6rem);
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        line-height: 1.1;
+        background: linear-gradient(
+          135deg,
+          var(--gold-pale) 0%,
+          var(--gold) 40%,
+          var(--gold-light) 70%,
+          var(--gold-pale) 100%
+        );
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 0.4rem;
+        text-shadow: none;
+      }
+
+      .hero-subtitle {
+        font-family: "Cinzel", serif;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+        font-weight: 400;
+        letter-spacing: 0.5em;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        margin-bottom: 2.5rem;
+      }
+
+      /* Ornamental divider */
+      .orn-divider {
+        display: flex;
+        align-items: center;
+        gap: 1.2rem;
+        margin-bottom: 2.5rem;
+      }
+      .orn-line {
+        flex: 1;
+        max-width: 120px;
+        height: 1px;
+        background: linear-gradient(90deg, transparent, var(--gold));
+      }
+      .orn-line.r {
+        background: linear-gradient(90deg, var(--gold), transparent);
+      }
+      .orn-star {
+        font-size: 1rem;
+        color: var(--gold);
+      }
+
+      .hero-message {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.05rem, 2.5vw, 1.3rem);
+        font-weight: 300;
+        font-style: italic;
+        color: rgba(240, 234, 214, 0.75);
+        line-height: 1.9;
+        max-width: 560px;
+        letter-spacing: 0.03em;
+      }
+
+      /* ── Glass Message Card ── */
+      .message-card {
+        position: relative;
+        margin: 3rem auto;
+        max-width: 700px;
+        padding: 3rem 3.5rem;
+        background: var(--glass-bg);
+        border: 1px solid var(--glass-border);
+        border-radius: 20px;
+        backdrop-filter: blur(20px);
+        -webkit-backdrop-filter: blur(20px);
+        overflow: hidden;
+        opacity: 0;
+        animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+      }
+
+      .message-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent 5%,
+          rgba(201, 169, 110, 0.4) 30%,
+          rgba(201, 169, 110, 0.6) 50%,
+          rgba(201, 169, 110, 0.4) 70%,
+          transparent 95%
+        );
+      }
+
+      .message-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 60% 40% at 50% 0%,
+          rgba(201, 169, 110, 0.06) 0%,
+          transparent 70%
+        );
+        pointer-events: none;
+      }
+
+      .card-tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.4em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 1.4rem;
+      }
+
+      .card-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.1rem, 2.5vw, 1.35rem);
+        font-weight: 300;
+        line-height: 1.95;
+        color: rgba(240, 234, 214, 0.88);
+        letter-spacing: 0.02em;
+      }
+
+      .card-sig {
+        margin-top: 2rem;
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.1rem;
+        font-style: italic;
+        color: var(--gold);
+        letter-spacing: 0.05em;
+      }
+
+      /* ── Section Title ── */
+      .section-head {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 0.8rem;
+        margin: 4rem 0 2.5rem;
+        opacity: 0;
+        animation: fadeIn 0.8s ease 0.8s forwards;
+      }
+
+      .section-tag {
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.42em;
+        color: var(--gold);
+        text-transform: uppercase;
+      }
+
+      .section-title {
+        font-family: "Cormorant Garamond", serif;
+        font-size: clamp(1.8rem, 4vw, 2.6rem);
+        font-weight: 300;
+        letter-spacing: -0.01em;
+        color: var(--text);
+      }
+      .section-title em {
+        font-style: italic;
+        color: var(--gold-light);
+      }
+
+      /* ── Photo Cards Grid ── */
+      .cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+
+      .photo-card {
+        position: relative;
+        background: var(--glass-bg2);
+        border: 1px solid var(--glass-border);
+        border-radius: 18px;
+        overflow: hidden;
+        cursor: pointer;
+        transition:
+          transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.4s ease,
+          border-color 0.4s ease;
+        opacity: 0;
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+      }
+
+      .photo-card::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 169, 110, 0.05) 0%,
+          transparent 60%
+        );
+        z-index: 1;
+        pointer-events: none;
+      }
+
+      .photo-card:hover {
+        transform: translateY(-6px) scale(1.01);
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(201, 169, 110, 0.25),
+          0 0 30px rgba(201, 169, 110, 0.08);
+        border-color: rgba(201, 169, 110, 0.35);
+      }
+
+      .card-img-wrap {
+        position: relative;
+        width: 100%;
+        aspect-ratio: 4/3;
+        overflow: hidden;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .card-img-wrap img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        display: block;
+      }
+
+      .photo-card:hover .card-img-wrap img {
+        transform: scale(1.06);
+      }
+
+      /* Image upload overlay */
+      .card-upload-overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        background: rgba(13, 13, 15, 0.6);
+        border: 2px dashed rgba(201, 169, 110, 0.3);
+        border-radius: 0;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        z-index: 5;
+      }
+
+      .card-upload-overlay.hidden {
+        display: none;
+      }
+
+      .card-upload-overlay:hover {
+        background: rgba(201, 169, 110, 0.05);
+        border-color: rgba(201, 169, 110, 0.6);
+      }
+
+      .upload-icon {
+        font-size: 2rem;
+        color: var(--gold);
+        opacity: 0.7;
+        line-height: 1;
+      }
+
+      .upload-label {
+        font-family: "Cinzel", serif;
+        font-size: 0.58rem;
+        letter-spacing: 0.3em;
+        color: var(--gold);
+        text-transform: uppercase;
+        opacity: 0.7;
+      }
+
+      /* Card overlay gradient */
+      .card-img-overlay {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 55%;
+        background: linear-gradient(
+          to top,
+          rgba(13, 13, 15, 0.85) 0%,
+          transparent 100%
+        );
+        z-index: 2;
+      }
+
+      .card-info {
+        position: relative;
+        z-index: 10;
+        padding: 1.4rem 1.5rem 1.5rem;
+      }
+
+      .card-name {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.35rem;
+        font-weight: 400;
+        letter-spacing: 0.02em;
+        color: var(--text);
+        margin-bottom: 0.3rem;
+      }
+
+      .card-wish {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.92rem;
+        font-style: italic;
+        color: var(--gold);
+        opacity: 0.85;
+        letter-spacing: 0.04em;
+      }
+
+      /* Add friend card */
+      .add-card {
+        position: relative;
+        background: transparent;
+        border: 1px dashed rgba(201, 169, 110, 0.2);
+        border-radius: 18px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        min-height: 280px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        opacity: 0;
+        animation: fadeIn 0.6s ease 1.4s forwards;
+      }
+
+      .add-card:hover {
+        border-color: rgba(201, 169, 110, 0.45);
+        background: rgba(201, 169, 110, 0.03);
+      }
+
+      .add-icon {
+        font-size: 2rem;
+        color: var(--gold);
+        opacity: 0.5;
+        transition:
+          opacity 0.3s,
+          transform 0.3s;
+      }
+
+      .add-card:hover .add-icon {
+        opacity: 0.9;
+        transform: scale(1.1) rotate(90deg);
+      }
+
+      .add-text {
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.38em;
+        color: var(--gold);
+        opacity: 0.5;
+        text-transform: uppercase;
+        transition: opacity 0.3s;
+      }
+
+      .add-card:hover .add-text {
+        opacity: 0.9;
+      }
+
+      /* ── Modal ── */
+      .modal-overlay {
+        position: fixed;
+        inset: 0;
+        background: rgba(5, 4, 10, 0.75);
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        z-index: 1000;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2rem;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
+
+      .modal-overlay.open {
+        opacity: 1;
+        pointer-events: all;
+      }
+
+      .modal {
+        position: relative;
+        background: rgba(19, 18, 26, 0.95);
+        border: 1px solid rgba(201, 169, 110, 0.25);
+        border-radius: 20px;
+        padding: 2.5rem 3rem;
+        max-width: 450px;
+        width: 100%;
+        transform: translateY(20px) scale(0.97);
+        transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        overflow: hidden;
+      }
+
+      .modal-overlay.open .modal {
+        transform: translateY(0) scale(1);
+      }
+
+      .modal::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 1px;
+        background: linear-gradient(
+          90deg,
+          transparent,
+          rgba(201, 169, 110, 0.5),
+          transparent
+        );
+      }
+
+      .modal-title {
+        font-family: "Cinzel", serif;
+        font-size: 0.65rem;
+        letter-spacing: 0.38em;
+        color: var(--gold);
+        text-transform: uppercase;
+        margin-bottom: 2rem;
+      }
+
+      .modal label {
+        display: block;
+        font-family: "Cinzel", serif;
+        font-size: 0.58rem;
+        letter-spacing: 0.3em;
+        color: var(--text-muted);
+        text-transform: uppercase;
+        margin-bottom: 0.55rem;
+        margin-top: 1.3rem;
+      }
+
+      .modal label:first-of-type {
+        margin-top: 0;
+      }
+
+      .modal input[type="text"] {
+        width: 100%;
+        background: rgba(255, 255, 255, 0.04);
+        border: 1px solid rgba(201, 169, 110, 0.18);
+        border-radius: 8px;
+        padding: 0.75rem 1rem;
+        color: var(--text);
+        font-family: "Cormorant Garamond", serif;
+        font-size: 1.05rem;
+        outline: none;
+        transition: border-color 0.3s;
+      }
+
+      .modal input[type="text"]:focus {
+        border-color: rgba(201, 169, 110, 0.45);
+      }
+
+      .modal input[type="text"]::placeholder {
+        color: rgba(158, 148, 132, 0.4);
+        font-style: italic;
+      }
+
+      .img-upload-zone {
+        width: 100%;
+        height: 130px;
+        border: 1px dashed rgba(201, 169, 110, 0.25);
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .img-upload-zone:hover,
+      .img-upload-zone.dragover {
+        border-color: rgba(201, 169, 110, 0.5);
+        background: rgba(201, 169, 110, 0.04);
+      }
+
+      .img-upload-zone img {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 10px;
+      }
+
+      .img-upload-zone input {
+        display: none;
+      }
+
+      .img-upload-text {
+        font-family: "Cinzel", serif;
+        font-size: 0.58rem;
+        letter-spacing: 0.25em;
+        color: var(--gold);
+        opacity: 0.6;
+        text-transform: uppercase;
+        z-index: 1;
+      }
+
+      .img-upload-icon {
+        font-size: 1.5rem;
+        color: var(--gold);
+        opacity: 0.5;
+        z-index: 1;
+      }
+
+      .modal-btns {
+        display: flex;
+        gap: 0.8rem;
+        margin-top: 2rem;
+      }
+
+      .btn-primary {
+        flex: 1;
+        padding: 0.85rem 1.5rem;
+        background: linear-gradient(
+          135deg,
+          rgba(201, 169, 110, 0.2),
+          rgba(201, 169, 110, 0.08)
+        );
+        border: 1px solid rgba(201, 169, 110, 0.3);
+        border-radius: 8px;
+        color: var(--gold-light);
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-primary:hover {
+        background: linear-gradient(
+          135deg,
+          rgba(201, 169, 110, 0.3),
+          rgba(201, 169, 110, 0.15)
+        );
+        box-shadow: 0 4px 20px rgba(201, 169, 110, 0.12);
+      }
+
+      .btn-ghost {
+        padding: 0.85rem 1.5rem;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 8px;
+        color: var(--text-muted);
+        font-family: "Cinzel", serif;
+        font-size: 0.6rem;
+        letter-spacing: 0.28em;
+        text-transform: uppercase;
+        cursor: pointer;
+        transition: all 0.3s ease;
+      }
+
+      .btn-ghost:hover {
+        border-color: rgba(255, 255, 255, 0.15);
+        color: var(--text);
+      }
+
+      /* ── Footer ── */
+      .footer {
+        text-align: center;
+        padding: 4rem 1rem 2rem;
+        opacity: 0;
+        animation: fadeIn 1s ease 1.8s forwards;
+      }
+
+      .footer-orn {
+        color: var(--gold);
+        font-size: 1.2rem;
+        letter-spacing: 0.6rem;
+        margin-bottom: 1rem;
+      }
+
+      .footer-text {
+        font-family: "Cormorant Garamond", serif;
+        font-size: 0.85rem;
+        font-style: italic;
+        color: var(--text-muted);
+        letter-spacing: 0.1em;
+      }
+
+      /* Card staggered reveal */
+      .photo-card.visible {
+        animation: cardReveal 0.7s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+      }
+      @keyframes cardReveal {
+        from {
+          opacity: 0;
+          transform: translateY(30px) scale(0.97);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0) scale(1);
+        }
+      }
+
+      /* Delete button on card hover */
+      .card-delete {
+        position: absolute;
+        top: 0.7rem;
+        right: 0.7rem;
+        z-index: 20;
+        width: 28px;
+        height: 28px;
+        background: rgba(13, 13, 15, 0.7);
+        border: 1px solid rgba(201, 169, 110, 0.2);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.75rem;
+        color: var(--text-muted);
+        cursor: pointer;
+        opacity: 0;
+        transition: all 0.25s ease;
+        backdrop-filter: blur(6px);
+      }
+
+      .photo-card:hover .card-delete {
+        opacity: 1;
+      }
+
+      .card-delete:hover {
+        background: rgba(200, 60, 60, 0.3);
+        border-color: rgba(200, 80, 80, 0.4);
+        color: #ff8080;
+      }
+
+      /* Animations */
+      @keyframes fadeSlideDown {
+        from {
+          opacity: 0;
+          transform: translateY(-22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeSlideUp {
+        from {
+          opacity: 0;
+          transform: translateY(22px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* Responsive */
+      @media (max-width: 640px) {
+        .message-card {
+          padding: 2rem 1.8rem;
+        }
+        .modal {
+          padding: 2rem 1.8rem;
+        }
+        .hero {
+          padding: 5rem 0.5rem 2.5rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Fixed background -->
+    <div class="bg-fixed">
+      <div class="bg-gradient"></div>
+      <div class="pattern"></div>
+      <div class="orb orb-1"></div>
+      <div class="orb orb-2"></div>
+      <div class="orb orb-3"></div>
+      <div class="particles" id="particles"></div>
+    </div>
+
+    <!-- Corner accents -->
+    <div class="corner corner-tl"></div>
+    <div class="corner corner-tr"></div>
+    <div class="corner corner-bl"></div>
+    <div class="corner corner-br"></div>
+
+    <!-- Page content -->
+    <div class="page">
+      <!-- Hero -->
+      <section class="hero">
+        <div class="hero-crescent">☽ &nbsp;✦&nbsp; ☾</div>
+        <p class="arabic">عيد مبارك</p>
+        <h1 class="hero-title">EID MUBARAK</h1>
+        <p class="hero-subtitle">May this blessed day bring joy & peace</p>
+
+        <div class="orn-divider">
+          <span class="orn-line"></span>
+          <span class="orn-star">✦</span>
+          <span class="orn-line r"></span>
+        </div>
+
+        <p class="hero-message">
+          To those I am grateful to call my friends —<br />
+          may this Eid be filled with light, laughter,<br />
+          and everything beautiful 🌟✌🏾.
+        </p>
+      </section>
+
+      <!-- Message Card -->
+      <div class="message-card">
+        <div class="card-tag">✦ &nbsp; A message for you &nbsp; ✦</div>
+        <p class="card-text" id="editableMessage">
+          Eid Mubarak, dear friends. May the blessings of this holy day wrap
+          around you and your families. I am so grateful for every memory we've
+          made, every laugh we've shared, and every moment we've been there for
+          one another. Here's to more beautiful days ahead — together.
+        </p>
+        <div class="card-sig" id="senderName">— With love</div>
+      </div>
+
+      <!-- Cards Section -->
+      <div class="section-head">
+        <span class="section-tag">✦ &nbsp; captured moments &nbsp; ✦</span>
+        <h2 class="section-title">Our <em>memories together</em></h2>
+      </div>
+
+      <div class="cards-grid" id="cardsGrid">
+        <!-- Cards rendered by JS -->
+      </div>
+
+      <!-- Footer -->
+      <div class="footer">
+        <div class="footer-orn">✦ &nbsp; ✦ &nbsp; ✦</div>
+        <p class="footer-text">Eid al-Fitr 2026 &nbsp;·&nbsp; made with love</p>
+      </div>
+    </div>
+
+    <!-- Add Friend Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+      <div class="modal">
+        <div class="modal-title">✦ &nbsp; Add a friend</div>
+
+        <label>Name</label>
+        <input type="text" id="friendName" placeholder="Your friend's name" />
+
+        <label>Personal message (optional)</label>
+        <input
+          type="text"
+          id="friendWish"
+          placeholder="e.g. You light up every room"
+        />
+
+        <label>Photo</label>
+        <div class="img-upload-zone" id="uploadZone">
+          <input type="file" id="photoInput" accept="image/*" />
+          <span class="img-upload-icon">⬆</span>
+          <span class="img-upload-text">Click to upload photo</span>
+        </div>
+
+        <div class="modal-btns">
+          <button class="btn-primary" id="saveCard">Add to celebration</button>
+          <button class="btn-ghost" id="cancelModal">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      // ── Initial friends data ──
+      // Add / edit friends here. Set photo to '' to show upload placeholder.
+      let friends = [
+        {
+          id: 1,
+          name: "Alisha, Fatima, Zenab (My head can't fit in the frame 😑😂)",
+          wish: "Eid Mubarak, guys",
+          photo: "all-khadija-iqbal.jpg",
+        },
+        {
+          id: 1,
+          name: "Alisha, Khadija, Fatima, Zenab, Iqbal",
+          wish: "Eid Mubarak, my friends",
+          photo: "all.jpg",
+        },
+        /*{
+          id: 2,
+          name: "Fatima",
+          wish: "May your day be as bright as you",
+          photo: "",
+        },
+        { id: 3, name: "Khadijah", wish: "Wishing you endless joy", photo: "" },
+        { id: 4, name: "Zenab", wish: "Blessed Eid, dear friend", photo: "" },
+        { id: 4, name: "Iqbal", wish: "Blessed Eid, dear friend", photo: "" }*/
+      ];
+
+      let nextId = 10;
+      let pendingPhotoData = null;
+
+      // ── Particles ──
+      const pContainer = document.getElementById("particles");
+      for (let i = 0; i < 30; i++) {
+        const p = document.createElement("div");
+        p.className = "particle";
+        const s = 1 + Math.random() * 2.5;
+        p.style.cssText = `
+        left: ${Math.random() * 100}%;
+        width: ${s}px; height: ${s}px;
+        animation-duration: ${10 + Math.random() * 14}s;
+        animation-delay: ${Math.random() * 14}s;
+      `;
+        pContainer.appendChild(p);
+      }
+
+      // ── Page entrance ──
+      document.body.classList.add("entered");
+
+      // ── Render cards ──
+      function renderCards() {
+        const grid = document.getElementById("cardsGrid");
+        grid.innerHTML = "";
+
+        friends.forEach((f, i) => {
+          const card = document.createElement("div");
+          card.className = "photo-card";
+          card.dataset.id = f.id;
+
+          card.innerHTML = `
+          <div class="card-delete" title="Remove">✕</div>
+          <div class="card-img-wrap">
+            ${f.photo ? `<img src="${f.photo}" alt="${f.name}" />` : ""}
+            <div class="card-upload-overlay ${f.photo ? "hidden" : ""}" data-id="${f.id}">
+              <span class="upload-icon">⬆</span>
+              <span class="upload-label">Add photo</span>
+              <input type="file" accept="image/*" style="display:none" class="inline-upload" />
+            </div>
+            <div class="card-img-overlay"></div>
+          </div>
+          <div class="card-info">
+            <div class="card-name">${f.name}</div>
+            <div class="card-wish">${f.wish || "Eid Mubarak ✦"}</div>
+          </div>
+        `;
+
+          // Stagger animation
+          setTimeout(() => {
+            card.classList.add("visible");
+          }, i * 100);
+
+          // Inline photo upload
+          const uploadOverlay = card.querySelector(".card-upload-overlay");
+          const inlineInput = card.querySelector(".inline-upload");
+
+          uploadOverlay.addEventListener("click", (e) => {
+            e.stopPropagation();
+            inlineInput.click();
+          });
+
+          inlineInput.addEventListener("change", (e) => {
+            const file = e.target.files[0];
+            if (!file) return;
+            const reader = new FileReader();
+            reader.onload = (ev) => {
+              const idx = friends.findIndex((x) => x.id === f.id);
+              if (idx !== -1) {
+                friends[idx].photo = ev.target.result;
+                renderCards();
+              }
+            };
+            reader.readAsDataURL(file);
+          });
+
+          // Delete
+          card.querySelector(".card-delete").addEventListener("click", (e) => {
+            e.stopPropagation();
+            friends = friends.filter((x) => x.id !== f.id);
+            renderCards();
+          });
+
+          grid.appendChild(card);
+        });
+
+        // Add card button
+        const addCard = document.createElement("div");
+        addCard.className = "add-card";
+        addCard.innerHTML = `
+        <span class="add-icon">+</span>
+        <span class="add-text">Add a friend</span>
+      `;
+        addCard.addEventListener("click", openModal);
+        grid.appendChild(addCard);
+      }
+
+      // ── Modal ──
+      const modalOverlay = document.getElementById("modalOverlay");
+      const uploadZone = document.getElementById("uploadZone");
+      const photoInput = document.getElementById("photoInput");
+
+      function openModal() {
+        document.getElementById("friendName").value = "";
+        document.getElementById("friendWish").value = "";
+        pendingPhotoData = null;
+        // Reset upload zone
+        uploadZone.querySelectorAll("img").forEach((el) => el.remove());
+        uploadZone.querySelector(".img-upload-icon").style.display = "";
+        uploadZone.querySelector(".img-upload-text").textContent =
+          "Click to upload photo";
+        modalOverlay.classList.add("open");
+        setTimeout(() => document.getElementById("friendName").focus(), 200);
+      }
+
+      function closeModal() {
+        modalOverlay.classList.remove("open");
+      }
+
+      document
+        .getElementById("cancelModal")
+        .addEventListener("click", closeModal);
+      modalOverlay.addEventListener("click", (e) => {
+        if (e.target === modalOverlay) closeModal();
+      });
+
+      uploadZone.addEventListener("click", () => photoInput.click());
+
+      uploadZone.addEventListener("dragover", (e) => {
+        e.preventDefault();
+        uploadZone.classList.add("dragover");
+      });
+      uploadZone.addEventListener("dragleave", () =>
+        uploadZone.classList.remove("dragover"),
+      );
+      uploadZone.addEventListener("drop", (e) => {
+        e.preventDefault();
+        uploadZone.classList.remove("dragover");
+        const file = e.dataTransfer.files[0];
+        if (file) handlePhotoFile(file);
+      });
+
+      photoInput.addEventListener("change", () => {
+        if (photoInput.files[0]) handlePhotoFile(photoInput.files[0]);
+      });
+
+      function handlePhotoFile(file) {
+        const reader = new FileReader();
+        reader.onload = (e) => {
+          pendingPhotoData = e.target.result;
+          let img = uploadZone.querySelector("img");
+          if (!img) {
+            img = document.createElement("img");
+            uploadZone.appendChild(img);
+          }
+          img.src = pendingPhotoData;
+          uploadZone.querySelector(".img-upload-icon").style.display = "none";
+          uploadZone.querySelector(".img-upload-text").textContent =
+            "✓ Photo ready";
+        };
+        reader.readAsDataURL(file);
+      }
+
+      document.getElementById("saveCard").addEventListener("click", () => {
+        const name = document.getElementById("friendName").value.trim();
+        if (!name) {
+          document.getElementById("friendName").focus();
+          return;
+        }
+
+        friends.push({
+          id: nextId++,
+          name,
+          wish: document.getElementById("friendWish").value.trim(),
+          photo: pendingPhotoData || "",
+        });
+
+        closeModal();
+        renderCards();
+      });
+
+      // ── Editable message & sender name ──
+      document
+        .getElementById("editableMessage")
+        .addEventListener("click", function () {
+          if (this.contentEditable !== "true") {
+            this.contentEditable = "true";
+            this.style.outline = "1px solid rgba(201,169,110,0.3)";
+            this.style.borderRadius = "6px";
+            this.style.padding = "4px";
+            this.focus();
+          }
+        });
+      document
+        .getElementById("editableMessage")
+        .addEventListener("blur", function () {
+          this.contentEditable = "false";
+          this.style.outline = "";
+          this.style.padding = "";
+        });
+
+      document
+        .getElementById("senderName")
+        .addEventListener("click", function () {
+          if (this.contentEditable !== "true") {
+            this.contentEditable = "true";
+            this.style.outline = "1px solid rgba(201,169,110,0.3)";
+            this.style.borderRadius = "4px";
+            this.focus();
+          }
+        });
+      document
+        .getElementById("senderName")
+        .addEventListener("blur", function () {
+          this.contentEditable = "false";
+          this.style.outline = "";
+        });
+
+      // ── Init ──
+      renderCards();
+    </script>
+  </body>
+</html>

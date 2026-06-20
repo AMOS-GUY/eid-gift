@@ -27,10 +27,14 @@
         --deep2: #13121a;
         --text: #f0ead6;
         --text-muted: #9e9484;
-        --glass-bg: rgba(255, 255, 255, 0.04);
+        --glass-bg: rgba(255, 255, 255, 0.05);
+        --glass-bg-strong: rgba(255, 255, 255, 0.08);
         --glass-bg2: rgba(255, 255, 255, 0.06);
-        --glass-border: rgba(201, 169, 110, 0.18);
+        --glass-border: rgba(201, 169, 110, 0.2);
         --glass-border2: rgba(201, 169, 110, 0.28);
+        --glass-border-bright: rgba(255, 255, 255, 0.3);
+        --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+        --glass-highlight: rgba(255, 255, 255, 0.1);
       }
 
       html {
@@ -339,14 +343,21 @@
         margin: 3rem auto;
         max-width: 700px;
         padding: 3rem 3.5rem;
-        background: var(--glass-bg);
+        background: linear-gradient(
+          135deg,
+          var(--glass-bg) 0%,
+          var(--glass-bg-strong) 100%
+        );
         border: 1px solid var(--glass-border);
-        border-radius: 20px;
-        backdrop-filter: blur(20px);
-        -webkit-backdrop-filter: blur(20px);
+        border-top: 1px solid var(--glass-border-bright);
+        border-left: 1px solid var(--glass-border-bright);
+        border-radius: 24px;
+        backdrop-filter: blur(30px) saturate(180%);
+        -webkit-backdrop-filter: blur(30px) saturate(180%);
         overflow: hidden;
         opacity: 0;
         animation: fadeSlideUp 1s cubic-bezier(0.22, 1, 0.36, 1) 0.5s forwards;
+        box-shadow: var(--glass-shadow);
       }
 
       .message-card::before {
@@ -359,9 +370,9 @@
         background: linear-gradient(
           90deg,
           transparent 5%,
-          rgba(201, 169, 110, 0.4) 30%,
-          rgba(201, 169, 110, 0.6) 50%,
-          rgba(201, 169, 110, 0.4) 70%,
+          rgba(201, 169, 110, 0.5) 30%,
+          rgba(255, 255, 255, 0.6) 50%,
+          rgba(201, 169, 110, 0.5) 70%,
           transparent 95%
         );
       }
@@ -372,7 +383,7 @@
         inset: 0;
         background: radial-gradient(
           ellipse 60% 40% at 50% 0%,
-          rgba(201, 169, 110, 0.06) 0%,
+          rgba(201, 169, 110, 0.08) 0%,
           transparent 70%
         );
         pointer-events: none;
@@ -446,9 +457,15 @@
 
       .photo-card {
         position: relative;
-        background: var(--glass-bg2);
+        background: linear-gradient(
+          135deg,
+          var(--glass-bg2) 0%,
+          var(--glass-bg-strong) 100%
+        );
         border: 1px solid var(--glass-border);
-        border-radius: 18px;
+        border-top: 1px solid var(--glass-border-bright);
+        border-left: 1px solid var(--glass-border-bright);
+        border-radius: 20px;
         overflow: hidden;
         cursor: pointer;
         transition:
@@ -456,8 +473,9 @@
           box-shadow 0.4s ease,
           border-color 0.4s ease;
         opacity: 0;
-        backdrop-filter: blur(12px);
-        -webkit-backdrop-filter: blur(12px);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        box-shadow: var(--glass-shadow);
       }
 
       .photo-card::before {
@@ -466,7 +484,7 @@
         inset: 0;
         background: linear-gradient(
           135deg,
-          rgba(201, 169, 110, 0.05) 0%,
+          rgba(201, 169, 110, 0.08) 0%,
           transparent 60%
         );
         z-index: 1;
@@ -474,12 +492,14 @@
       }
 
       .photo-card:hover {
-        transform: translateY(-6px) scale(1.01);
+        transform: translateY(-8px) scale(1.02);
         box-shadow:
-          0 20px 50px rgba(0, 0, 0, 0.4),
-          0 0 0 1px rgba(201, 169, 110, 0.25),
-          0 0 30px rgba(201, 169, 110, 0.08);
-        border-color: rgba(201, 169, 110, 0.35);
+          0 25px 60px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(255, 255, 255, 0.15),
+          0 0 40px rgba(201, 169, 110, 0.15);
+        border-color: var(--glass-border-bright);
+        border-top-color: rgba(255, 255, 255, 0.5);
+        border-left-color: rgba(255, 255, 255, 0.5);
       }
 
       .card-img-wrap {
@@ -586,9 +606,15 @@
       /* Add friend card */
       .add-card {
         position: relative;
-        background: transparent;
-        border: 1px dashed rgba(201, 169, 110, 0.2);
-        border-radius: 18px;
+        background: linear-gradient(
+          135deg,
+          var(--glass-bg) 0%,
+          var(--glass-bg-strong) 100%
+        );
+        border: 2px dashed var(--glass-border);
+        border-top-color: var(--glass-border-bright);
+        border-left-color: var(--glass-border-bright);
+        border-radius: 20px;
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -596,14 +622,27 @@
         gap: 0.7rem;
         min-height: 280px;
         cursor: pointer;
-        transition: all 0.3s ease;
+        transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1);
         opacity: 0;
         animation: fadeIn 0.6s ease 1.4s forwards;
+        backdrop-filter: blur(15px) saturate(180%);
+        -webkit-backdrop-filter: blur(15px) saturate(180%);
+        box-shadow: var(--glass-shadow);
       }
 
       .add-card:hover {
-        border-color: rgba(201, 169, 110, 0.45);
-        background: rgba(201, 169, 110, 0.03);
+        border-color: var(--glass-border-bright);
+        border-top-color: rgba(255, 255, 255, 0.5);
+        border-left-color: rgba(255, 255, 255, 0.5);
+        background: linear-gradient(
+          135deg,
+          var(--glass-bg-strong) 0%,
+          rgba(255, 255, 255, 0.1) 100%
+        );
+        transform: translateY(-4px);
+        box-shadow:
+          0 20px 50px rgba(0, 0, 0, 0.4),
+          0 0 0 1px rgba(255, 255, 255, 0.1);
       }
 
       .add-icon {

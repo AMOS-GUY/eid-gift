@@ -45,38 +45,48 @@
 
       /* Glassmorphism scrollbar for Webkit */
       ::-webkit-scrollbar {
-        width: 10px;
+        width: 14px;
       }
 
       ::-webkit-scrollbar-track {
-        background: rgba(13, 13, 15, 0.5);
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.05);
+        background: rgba(13, 13, 15, 0.3);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: inset 0 0 20px rgba(0, 0, 0, 0.2);
       }
 
       ::-webkit-scrollbar-thumb {
         background: linear-gradient(
-          180deg,
-          rgba(201, 169, 110, 0.6) 0%,
-          rgba(201, 169, 110, 0.3) 100%
+          135deg,
+          rgba(201, 169, 110, 0.7) 0%,
+          rgba(232, 213, 163, 0.5) 50%,
+          rgba(201, 169, 110, 0.4) 100%
         );
-        backdrop-filter: blur(10px);
-        -webkit-backdrop-filter: blur(10px);
-        border-radius: 10px;
-        border: 1px solid rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px) saturate(180%);
+        -webkit-backdrop-filter: blur(20px) saturate(180%);
+        border-radius: 14px;
+        border: 1px solid rgba(255, 255, 255, 0.2);
+        border-top-color: rgba(255, 255, 255, 0.4);
+        border-left-color: rgba(255, 255, 255, 0.4);
+        box-shadow: 
+          0 0 20px rgba(201, 169, 110, 0.3),
+          inset 0 0 10px rgba(255, 255, 255, 0.1);
         transition: all 0.3s ease;
       }
 
       ::-webkit-scrollbar-thumb:hover {
         background: linear-gradient(
-          180deg,
-          rgba(201, 169, 110, 0.8) 0%,
-          rgba(201, 169, 110, 0.5) 100%
+          135deg,
+          rgba(201, 169, 110, 0.9) 0%,
+          rgba(232, 213, 163, 0.7) 50%,
+          rgba(201, 169, 110, 0.6) 100%
         );
-        border-color: rgba(255, 255, 255, 0.2);
-        box-shadow: 0 0 15px rgba(201, 169, 110, 0.3);
+        border-color: rgba(255, 255, 255, 0.3);
+        box-shadow: 
+          0 0 30px rgba(201, 169, 110, 0.5),
+          inset 0 0 15px rgba(255, 255, 255, 0.2);
       }
 
       body {
@@ -85,6 +95,49 @@
         color: var(--text);
         min-height: 100vh;
         overflow-x: hidden;
+        cursor: none;
+      }
+
+      /* Custom cursor with tail */
+      .cursor-dot {
+        position: fixed;
+        width: 8px;
+        height: 8px;
+        background: radial-gradient(circle, rgba(201, 169, 110, 0.9), rgba(201, 169, 110, 0.4));
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 10000;
+        transform: translate(-50%, -50%);
+        box-shadow: 0 0 10px rgba(201, 169, 110, 0.6);
+        transition: transform 0.1s ease;
+      }
+
+      .cursor-tail {
+        position: fixed;
+        pointer-events: none;
+        z-index: 9999;
+        transform: translate(-50%, -50%);
+      }
+
+      .cursor-tail span {
+        position: absolute;
+        width: 6px;
+        height: 6px;
+        background: radial-gradient(circle, rgba(201, 169, 110, 0.6), transparent);
+        border-radius: 50%;
+        opacity: 0;
+        animation: tailFade 0.6s linear forwards;
+      }
+
+      @keyframes tailFade {
+        0% {
+          opacity: 0.8;
+          transform: scale(1);
+        }
+        100% {
+          opacity: 0;
+          transform: scale(0.3);
+        }
       }
 
       body.entered {
@@ -501,8 +554,9 @@
         position: relative;
         background: linear-gradient(
           135deg,
-          var(--glass-bg2) 0%,
-          var(--glass-bg-strong) 100%
+          rgba(201, 169, 110, 0.12) 0%,
+          rgba(255, 255, 255, 0.08) 50%,
+          rgba(201, 169, 110, 0.1) 100%
         );
         border: 1px solid var(--glass-border);
         border-top: 1px solid var(--glass-border-bright);
@@ -511,13 +565,16 @@
         overflow: hidden;
         cursor: pointer;
         transition:
-          transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
-          box-shadow 0.4s ease,
-          border-color 0.4s ease;
+          transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+          box-shadow 0.5s ease,
+          border-color 0.5s ease;
         opacity: 0;
-        backdrop-filter: blur(20px) saturate(180%);
-        -webkit-backdrop-filter: blur(20px) saturate(180%);
-        box-shadow: var(--glass-shadow);
+        backdrop-filter: blur(30px) saturate(200%);
+        -webkit-backdrop-filter: blur(30px) saturate(200%);
+        box-shadow: 
+          var(--glass-shadow),
+          0 0 30px rgba(201, 169, 110, 0.1),
+          inset 0 0 20px rgba(255, 255, 255, 0.03);
       }
 
       .photo-card::before {
@@ -526,22 +583,41 @@
         inset: 0;
         background: linear-gradient(
           135deg,
-          rgba(201, 169, 110, 0.08) 0%,
+          rgba(201, 169, 110, 0.12) 0%,
           transparent 60%
         );
         z-index: 1;
         pointer-events: none;
       }
 
+      .photo-card::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: radial-gradient(
+          ellipse 80% 50% at 50% 0%,
+          rgba(255, 255, 255, 0.08) 0%,
+          transparent 50%
+        );
+        pointer-events: none;
+        opacity: 0;
+        transition: opacity 0.5s ease;
+      }
+
+      .photo-card:hover::after {
+        opacity: 1;
+      }
+
       .photo-card:hover {
-        transform: translateY(-8px) scale(1.02);
+        transform: translateY(-12px) scale(1.03);
         box-shadow:
-          0 25px 60px rgba(0, 0, 0, 0.5),
-          0 0 0 1px rgba(255, 255, 255, 0.15),
-          0 0 40px rgba(201, 169, 110, 0.15);
+          0 35px 80px rgba(0, 0, 0, 0.5),
+          0 0 0 1px rgba(255, 255, 255, 0.2),
+          0 0 50px rgba(201, 169, 110, 0.25),
+          inset 0 0 30px rgba(255, 255, 255, 0.05);
         border-color: var(--glass-border-bright);
-        border-top-color: rgba(255, 255, 255, 0.5);
-        border-left-color: rgba(255, 255, 255, 0.5);
+        border-top-color: rgba(255, 255, 255, 0.6);
+        border-left-color: rgba(255, 255, 255, 0.6);
       }
 
       .card-img-wrap {
@@ -550,18 +626,21 @@
         aspect-ratio: 4/3;
         overflow: hidden;
         background: rgba(255, 255, 255, 0.03);
+        border-bottom: 1px solid rgba(201, 169, 110, 0.1);
       }
 
       .card-img-wrap img {
         width: 100%;
         height: 100%;
         object-fit: cover;
-        transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
+        transition: transform 0.8s cubic-bezier(0.22, 1, 0.36, 1), filter 0.5s ease;
         display: block;
+        filter: brightness(1.05) contrast(1.05);
       }
 
       .photo-card:hover .card-img-wrap img {
-        transform: scale(1.06);
+        transform: scale(1.1);
+        filter: brightness(1.15) contrast(1.1) saturate(1.1);
       }
 
       /* Image upload overlay */
@@ -1378,6 +1457,48 @@
 
       // ── Init ──
       renderCards();
+
+      // Custom cursor with tail effect
+      const cursorDot = document.getElementById('cursorDot');
+      const cursorTail = document.getElementById('cursorTail');
+      
+      let mouseX = window.innerWidth / 2;
+      let mouseY = window.innerHeight / 2;
+      let dotX = mouseX;
+      let dotY = mouseY;
+      
+      // Track mouse position
+      document.addEventListener('mousemove', (e) => {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        
+        // Create tail particle
+        const tailParticle = document.createElement('span');
+        tailParticle.style.left = mouseX + 'px';
+        tailParticle.style.top = mouseY + 'px';
+        cursorTail.appendChild(tailParticle);
+        
+        // Remove particle after animation
+        setTimeout(() => {
+          tailParticle.remove();
+        }, 600);
+      });
+      
+      // Smooth cursor dot movement
+      function animateCursor() {
+        dotX += (mouseX - dotX) * 0.15;
+        dotY += (mouseY - dotY) * 0.15;
+        
+        cursorDot.style.left = dotX + 'px';
+        cursorDot.style.top = dotY + 'px';
+        
+        requestAnimationFrame(animateCursor);
+      }
+      animateCursor();
     </script>
+
+    <!-- Custom cursor elements -->
+    <div class="cursor-dot" id="cursorDot"></div>
+    <div class="cursor-tail" id="cursorTail"></div>
   </body>
 </html>
